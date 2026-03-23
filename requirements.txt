@@ -4,4 +4,5 @@ scipy
 plotly
 ipykernel
 statsmodels
+nbformat
 -e .
