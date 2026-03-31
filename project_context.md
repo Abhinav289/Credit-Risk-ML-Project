@@ -149,11 +149,17 @@ drop_candidates = [
 ---
 
 ## ⏳ Day 3 — Modeling
-- Models: Logistic Regression (baseline) → Random Forest → XGBoost
+<!-- - Models: Logistic Regression (baseline) → Random Forest → XGBoost
 - Validation: Stratified K-Fold CV
 - Metrics: ROC-AUC, F1, Precision, Recall, Calibration
 - Threshold optimization — justify beyond 0.5
-- Calibration: reliability diagram + CalibratedClassifierCV
+- Calibration: reliability diagram + CalibratedClassifierCV -->
+- Baseline: Logistic Regression (AUC 0.764)
+- Champion: XGBoost with early stopping (CV AUC 0.890)
+- Addressed data leakage by putting SMOTE inside the CV pipeline
+- Highlighted the "F1 Trap" for imbalanced business costs
+- Applied Isotonic Calibration to fix overconfident probabilities
+- Saved champion model to `models/calibrated_xgb_model.pkl`
 
 ## ⏳ Day 4 — MLOps
 - MLflow experiment tracking
@@ -189,3 +195,5 @@ scikit-learn
 nbformat
 jupyter
 ipykernel
+xgboost
+imbalanced-learn
