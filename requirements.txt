@@ -10,4 +10,5 @@ imbalanced-learn
 xgboost
 mlflow
 shap
+streamlit
 -e .
