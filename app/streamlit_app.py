@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 # ── Page config ───────────────────────────────────────────
 st.set_page_config(
     page_title="Credit Risk Predictor",
-    page_icon="🏦",
+    page_icon="",
     layout="wide"
 )
 
@@ -44,21 +44,21 @@ THRESHOLD = 0.612
 
 # ── Sidebar ───────────────────────────────────────────────
 with st.sidebar:
-    st.title("🏦 Credit Risk Predictor")
-    st.markdown("---")
+    # st.title(" Credit Risk Predictor")
+    # st.markdown("---")
     
-    st.markdown("### 📋 Default Borrower Profile")
+    st.markdown("### Default Borrower Profile")
     st.markdown(
         """
         From EDA — a borrower **most likely to default** shows:
         
-        🔴 Checking account: negative or absent  
-        🔴 Credit history: no credits / all paid  
-        🔴 Savings: less than 100 DM  
-        🔴 No known property (no collateral)  
-        🔴 Co-applicant on the loan  
-        🔴 Loan duration: 45+ months  
-        🔴 Age: 25–30 years  
+        - Checking account: negative or absent  
+        - Credit history: no credits / all paid  
+        - Savings: less than 100 DM  
+        - No known property (no collateral)  
+        - Co-applicant on the loan  
+        - Loan duration: 45+ months  
+        - Age: 25–30 years  
         
         Compare your inputs against this profile.
         """
@@ -78,7 +78,7 @@ st.markdown(
 st.markdown("---")
 
 # ── Input Form ────────────────────────────────────────────
-st.subheader("📝 Borrower Details")
+st.subheader(" Borrower Details")
 
 col1, col2, col3 = st.columns(3)
 
@@ -235,7 +235,7 @@ if 'financial_stress_score' not in st.session_state:
 
 # ── Predict Button ────────────────────────────────────────
 st.markdown("---")
-predict_clicked = st.button("🔍 Assess Credit Risk",
+predict_clicked = st.button(" Assess Credit Risk",
                              width='stretch',
                              type="primary")
 
@@ -348,7 +348,7 @@ if st.session_state.prediction_made:
 
     # ── Traffic Light Verdict ─────────────────────────────
     st.markdown("---")
-    st.subheader("📊 Assessment Result")
+    st.subheader("Assessment Result")
 
     if proba < THRESHOLD:
         verdict       = "✅ LOW RISK"
@@ -400,7 +400,7 @@ if st.session_state.prediction_made:
 
     # ── Financial Stress Score ────────────────────────────
     st.markdown("---")
-    st.subheader("💰 Financial Stress Score")
+    st.subheader(" Financial Stress Score")
     stress_col1, stress_col2 = st.columns([1, 2])
     with stress_col1:
         st.metric(
@@ -419,7 +419,7 @@ if st.session_state.prediction_made:
 
     # ── SHAP Explanation ──────────────────────────────────
     st.markdown("---")
-    if st.button("🔍 Explain this prediction"):
+    if st.button(" Explain this prediction"):
 
         with st.spinner("Computing SHAP explanation..."):
             input_scaled       = scaler.transform(input_df)
@@ -452,7 +452,7 @@ if st.session_state.prediction_made:
             st.plotly_chart(fig_shap, width='stretch')
 
             # Plain English
-            st.subheader("📖 Plain English Explanation")
+            st.subheader(" Plain English Explanation")
             top_risk    = shap_df[shap_df['shap_value'] > 0].head(3)
             top_protect = shap_df[shap_df['shap_value'] < 0].head(3)
 
