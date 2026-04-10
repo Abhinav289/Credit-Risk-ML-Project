@@ -1,9 +1,3 @@
-## End to End ML Project on German Credit Dataset
-> Binary classification model to assess credit default risk,  
-> built with XGBoost, SHAP explainability, and deployed as a  
-> Streamlit app with per-prediction explanations.
-
----
 
 ## Project Objective
 
