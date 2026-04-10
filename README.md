@@ -16,7 +16,7 @@ Given attributes about a loan applicant, decide the credibility of the borrower 
 
 ---
 
-##  Project Structure
+<!-- ##  Project Structure
 credit-risk-project/
 ├── data/
 │   ├── raw/                    # Original dataset
@@ -36,7 +36,7 @@ credit-risk-project/
 ├── reports/figures/            # Key plots
 ├── README.md                   # project description
 └── requirements.txt
----
+--- -->
 
 ## Run Locally
 ```bash
