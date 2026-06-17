@@ -129,3 +129,4 @@ Threshold optimized at 0.612 to maximize F1 score.
 - Demšar, J. (2006). Statistical Comparisons of Classifiers
 <!-- - SHAP: Lundberg & Lee (2017). A Unified Approach to  
   Interpreting Model Predictions -->
+- Idowu Aruleba, Enhanced credit risk prediction using deep learning and resampling 
